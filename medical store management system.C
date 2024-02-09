@@ -178,8 +178,6 @@ void linkfloat()
 //=========================Time & Date ====================
 int t(void)
 {
-	//struct date d;
-	//struct time t;
 
     time_t t = time(0);   // get time now
     struct tm * now = localtime( & t );
@@ -273,8 +271,8 @@ void box()
 		printf("%c",219);
 	}
 
-	for(i=3;i<=45;i++)      //This 'FOR' loop will print asterisks 'I'
-	{                       //vertically till the 3th row is reached.
+	for(i=3;i<=45;i++)      
+	{                       
 		gotoxy(3,i);
 		printf("%c",219);
 		gotoxy(79,i);
@@ -283,9 +281,9 @@ void box()
 }
 void wbox()
 {
-	for(i=5;i<=75;i++) 	//This 'FOR' loop will print a combination of
+	for(i=5;i<=75;i++) 	
 	{
-		gotoxy(i,5);    //the 75th column is reached.
+		gotoxy(i,5);    
 		printf("%c",219);
 		gotoxy(74,40);
 		printf("%c",219);
@@ -293,8 +291,8 @@ void wbox()
 		printf("%c",219);
 	}
 
-	for(i=5;i<=40;i++)      //This 'FOR' loop will print asteriks 'I'
-	{                       //vertically till the 17th row is reached.
+	for(i=5;i<=40;i++)     
+	{                       
 		gotoxy(5,i);
 		printf("%c",219);
 		gotoxy(75,i);
@@ -357,30 +355,30 @@ void welcome()
  system("cls");
 	for(m=0;m<16;m++)
 	{
-		//textcolor(m);
+		
 		wbox();
 	for(i=0;i<16;i++)
 	{
-		//textcolor(i);
+		
 		gotoxy(35,20);
 		printf("WELCOME");
 		k=i+2;
-		//textcolor(k);
+		
 		gotoxy(38,22);
 		printf("TO");
 		l=i+3;
-		//textcolor(l);
+		
 		gotoxy(28,24);
 		printf("MEDICAL");
-		//textcolor(l);
+		
 		gotoxy(36,24);
 		printf("STORE");
-		//textcolor(l);
+		
 		gotoxy(42,24);
 		printf("SYSTEM");
 		gotoxy(52,45);
 		j=i+1;
-		//textcolor(j);
+		
 		printf("Loading......");
 		Sleep(40);
 	}
@@ -457,66 +455,8 @@ int main()
 	int count=0,i;
 
 	system("cls");
-
-	/*start:
-	//textcolor(5);
-	wbox();
-	lbox();
-	//textcolor(GREEN);
-	gotoxy(35,8);
-	printf(" LOGIN ");
-
-	//textcolor(RED);
-	gotoxy(32,18);
-	printf("Enter user name :");
-	gotoxy(32,22);
-	printf("Enter password  :");
-	gotoxy(51,18);
-	strcpy(gets(name),name);
-
-	gotoxy(51,22);
-
-	i=0;
-	do
-	{
-		pass[i] = getch();
-		if(pass[i] == 13 )
-		{
-			break;
-		}
-		else if(pass[i]==8 && i>0)
-		{
-			printf("%c%c%c",8,32,8);
-			i--;
-		}
-		else
-		{
-			printf("*");
-			i++;
-		}
-	}while(pass[i]!=13);
-	pass[i] = '\0';
-
-	if(strcmp(name,"rana") || strcmp(pass,"singh"))
-	{
-	 system("cls");
-	 gotoxy(20,20);
-	 printf("Please Enter vailid Username & Passward!!!!!");
-	 count++;
-	 gotoxy(20,23);
-	 printf("%d chance left!!!!",3-count);
-	 getch();
-	 system("cls");
-	 if(count==3)
-	 exit(0);
-	 else
-	 goto start;
-	}
-	else
-	{*/
-	 //welcome();
+			
 	 main_menu();
-	//}
 
 }
 
@@ -561,66 +501,46 @@ void main_menu()
 
 	do
 	{
-		//window(1,1,80,50);
-		//textbackground(BLACK);
 		system("cls");
-		//textcolor(4+BLINK);
 		gotoxy(3,5);
 		printf("S");
-		//textcolor(WHITE);
 		gotoxy(4,5);
 		printf("upplier Info");
-		//textcolor(4+BLINK);
 		gotoxy(19,5);
 		printf("C");
-		//textcolor(15);
 		gotoxy(20,5);
 		printf("ustomer Info");
-		//textcolor(4+BLINK);
 		gotoxy(36,5);
 		printf("M");
-		//textcolor(15);
 		gotoxy(37,5);
 		printf("edicine");
-		//textcolor(4+BLINK);
 		gotoxy(48,5);
 		printf("R");
-		//textcolor(15);
 		gotoxy(49,5);
 		printf("Report");
-		//textcolor(4+BLINK);
 		gotoxy(57,5);
 		printf("B");
-		//textcolor(15);
 		gotoxy(58,5);
 		printf("ill");
-		//textcolor(4+BLINK);
 		gotoxy(64,5);
 		printf("A");
-		//textcolor(15);
 		gotoxy(65,5);
 		printf("bout");
-		//textcolor(4+BLINK);
 		gotoxy(72,5);
 		printf("E");
-		//textcolor(15);
 		gotoxy(73,5);
 		printf("xit");
 		t();   //this function display date & time
 		box1();
 		main_box();
 		gotoxy(30,10);
-		//textcolor(GREEN);
 		printf("Welcome To Medical Store ");
 		gotoxy(2,28);
-		//textcolor(15);
 
 		remainder();//this function is active when medicine qty is less then 10.
 		gotoxy(10,40);
-		//textcolor(RED+BLINK);
 		printf("Press ");
 		gotoxy(16,40);
-		//textcolor(15);
 		printf("First Character for further Menu  ");
 
 		ch=toupper(getche());
@@ -639,7 +559,6 @@ void main_menu()
 			case 'A':about();
 				 break;
 			case 'E':gotoxy(23,20);
-				 //textcolor(4);
 			printf("Do you want to exit now? Y/N :");
 			Sleep(100);
 			ch=(getche());
@@ -648,7 +567,6 @@ void main_menu()
 			{
 				animation();
 				system("cls");
-				//textcolor(2);
 				gotoxy(35,20);
 				printf(" Please wait.....");
 				Sleep(2000);
@@ -659,7 +577,7 @@ void main_menu()
 				main_menu();
 			}
 
-			default://textcolor(4+BLINK);
+			default:
 			gotoxy(11,34);
 			printf("Plese Enter right character ONLY (S,C,M,R,B,A).");
 			getch();
@@ -674,52 +592,51 @@ void supplier()
 	{
 	  system("cls");
 	  gotoxy(34,3);
-	  //textcolor(GREEN);
 	  printf("----------------");
 	  gotoxy(35,4);
-	  //textcolor(GREEN);
+	  
 	  printf("Supplier MENU");
 	  gotoxy(34,5);
-	  //textcolor(GREEN);
+	  
 	  printf("----------------");
 	  gotoxy(25,11);
-	  //textcolor(4+BLINK);
+	  
 	  printf("A");
 	  gotoxy(26,11);
-	  //textcolor(15);
+	  
 	  printf("dd New Supplier");
 
 	  gotoxy(25,15);
-	  //textcolor(4+BLINK);
+	
 	  printf("U");
 	  gotoxy(26,15);
-	  //textcolor(15);
+	 
 	  printf("pdate Supplier");
 
 	  gotoxy(25,19);
-	  //textcolor(4+BLINK);
+	  
 	  printf("S");
 	  gotoxy(26,19);
-	  //textcolor(15);
+	
 	  printf("earch Supplier");
 
 	  gotoxy(25,23);
-	  //textcolor(4+BLINK);
+	 
 	  printf("L");
 	  gotoxy(26,23);
-	  //textcolor(15);
+	
 	  printf("ist of Existing Supplier");
 
 	  gotoxy(25,27);
-	  //textcolor(4+BLINK);
+	 
 	  printf("M");
 	  gotoxy(26,27);
-	  //textcolor(15);
+	 
 	  printf("ain Menu");
 	  main_box();
 
 	  gotoxy(10,40);
-	  //textcolor(15);
+	
 	  printf("Press First Character for further Operation ");
 
 
@@ -739,7 +656,7 @@ void supplier()
 			 break;
 		case 'M':main_menu();
 			 break;
-		default://textcolor(4+BLINK);
+		default:
 			gotoxy(11,34);
 			printf("Plese Enter right character ONLY (A,L,U,S,M).");
 			getch();
@@ -756,52 +673,51 @@ void customer()
 	  system("cls");
 
 	  gotoxy(34,3);
-	  //textcolor(GREEN);
+	 
 	  printf("---------------");
 	  gotoxy(35,4);
 	  printf("Customer Menu.");
 	  gotoxy(34,5);
 	  printf("---------------");
 	  gotoxy(25,11);
-	  //textcolor(4+BLINK);
+	 
 	  printf("A");
 	  gotoxy(26,11);
-	  //textcolor(15);
+	
 	  printf("dd New Customer");
 
 	  gotoxy(25,15);
-	  //textcolor(4+BLINK);
+	 
 	  printf("U");
 	  gotoxy(26,15);
-	  //textcolor(15);
+	
 	  printf("pdate Customer");
 
 	  gotoxy(25,19);
-	  //textcolor(4+BLINK);
+	
 	  printf("S");
 	  gotoxy(26,19);
-	  //textcolor(15);
+	
 	  printf("earch Customer");
 
 	  gotoxy(25,23);
-	  //textcolor(4+BLINK);
+	
 	  printf("L");
 	  gotoxy(26,23);
-	  //textcolor(15);
+	
 	  printf("ist of Existing Customer");
 
 	  gotoxy(25,27);
-	  //textcolor(4+BLINK);
+	
 	  printf("M");
 	  gotoxy(26,27);
-	  //textcolor(15);
+	
 	  printf("ain Menu");
 	  main_box();
 
 	  gotoxy(10,40);
-	  //textcolor(15);
+	
 	  printf("Press First Character for further Operations  ");
-
 
 	  ch=toupper(getche());
 	  switch(ch)
@@ -819,7 +735,7 @@ void customer()
 			 break;
 		case 'M':main_menu();
 			 break;
-		default://textcolor(4+BLINK);
+		default:
 			gotoxy(11,34);
 			printf("Plese Enter right character ONLY (A,L,U,S,M).");
 			getch();
@@ -836,56 +752,56 @@ void medicine()
 	  system("cls");
 
 	  gotoxy(34,3);
-	  //textcolor(GREEN);
+	 
 	  printf("---------------");
 	  gotoxy(35,4);
 	  printf("Medicine Menu.");
 	  gotoxy(34,5);
 	  printf("---------------");
 	  gotoxy(25,15);
-	  //textcolor(4+BLINK);
+	 
 	  printf("P");
 	  gotoxy(26,15);
-	  //textcolor(15);
+	
 	  printf("urchase New Medicine");
 
 	  gotoxy(25,19);
-	  //textcolor(4+BLINK);
+	
 	  printf("S");
 	  gotoxy(26,19);
-	  //textcolor(15);
+	
 	  printf("ale Medicine");
 
 	  gotoxy(25,23);
-	  //textcolor(15);
+	 
 	  printf("Sto");
 	  gotoxy(28,23);
-	  //textcolor(4+BLINK);
+	
 	  printf("c");
 	  gotoxy(29,23);
-	  //textcolor(15);
+	
 	  printf("k of Medicine");
 
 	  gotoxy(25,27);
-	  //textcolor(15);
+	
 	  printf("Se");
 	  gotoxy(27,27);
-	  //textcolor(4+BLINK);
+	
 	  printf("a");
 	  gotoxy(28,27);
-	  //textcolor(15);
+	 
 	  printf("rch Medicine");
 
 	  gotoxy(25,31);
-	  //textcolor(4+BLINK);
+	
 	  printf("M");
 	  gotoxy(26,31);
-	  //textcolor(15);
+	
 	  printf("ain Menu");
 	  main_box();
 
 	  gotoxy(10,40);
-	  //textcolor(15);
+	
 	  printf("Press First Character for further Operations  ");
 
 
@@ -902,7 +818,7 @@ void medicine()
 			 break;
 		case 'M':main_menu();
 			 break;
-		default://textcolor(4+BLINK);
+		default:
 			gotoxy(11,34);
 			printf("Plese Enter right character ONLY (P,S,C,M).");
 			getch();
@@ -1009,11 +925,10 @@ void about()
 
    do
    {
-//   window(1,1,80,50);
 
-	//textcolor(LIGHTGRAY);
+	
 	gotoxy(28,4);
-	//textcolor(RED+BLINK);
+	
 	printf("***** MEDICAL STORE *****");
 	gotoxy(10,8);
 	printf("=> This Project Is About Medical Store ");
@@ -1029,11 +944,11 @@ void about()
 	printf("<<<<-Press 1 for main menu->>>>");
 	c = (getche());
 
-	switch (c)      //This 'SWITCH' structure will ask the user for input from [1] to [7] and will display error on Invalid Entry.
+	switch (c)     
 		{
 			case '1':animation(); main_menu();
 				gotoxy(26,24);
-				puts("<<--ENTER FROM 1 PLEASE-->>");	//This message will only print on INVALID ENTRY and Will ask again for input.
+				puts("<<--ENTER FROM 1 PLEASE-->>");	
 				getch();
 		}
 
@@ -1063,7 +978,7 @@ void remainder()
 //========================for bill =============================
 void bill()
 {
-//struct date d;
+
     time_t td = time(0);   // get time now
     struct tm * now = localtime( & td );
 
@@ -1082,8 +997,7 @@ void bill()
 	   scanf("%s",&id);
 	   system("cls");
 	   gotoxy(25,3);
-	   ////textcolor(YELLOW+BLINK);
-	  // printf("***** CareWell Medico *****");
+	
 	   box();
 	   gotoxy(7,7);
 	   printf("Bill No: ");
@@ -1127,7 +1041,6 @@ void bill()
 				//textcolor(YELLOW+BLINK);
 				printf("Press Any key to go to  MENU ...........");
 
-			       //	break;
 			}
 
 
@@ -1172,11 +1085,9 @@ void supp_entry()
 		gotoxy(30,8);
 		printf(" SUPPLIER ENTRY ");
 		gotoxy(8,13);
-//		//flushall();
 		temp1.supp_id=getsupp_id();
 		printf("SUPPLIER ID : %d ",temp1.supp_id);
-		//ventry(temp1.supp_id,1);
-		//flushall();
+		
 		gotoxy(39,13);
 		printf("SUPPLIER NAME : ");
 		gotoxy(8,18);
@@ -1187,20 +1098,20 @@ void supp_entry()
 		printf("EMAIL ID    : ");
 
 		gotoxy(55,13);
-		//flushall();
+		
 		ventry(temp1.supp_name,0);
 		gotoxy(22,18);
 		ventry(temp1.city,0);
-		//flushall();
+		
 		gotoxy(55,18);
 		ventry(temp1.mob_no,1);
-		//flushall();
+		
 		gotoxy(22,23);
 		gets(temp1.email);
-		//flushall();
+		
 
 		gotoxy(20,30);
-		//textcolor(RED+BLINK);
+		
 		printf("S");
 		//textcolor(WHITE);
 		gotoxy(21,30);
@@ -1246,10 +1157,10 @@ void supp_list()
 	   system("cls");
 	   box();
 	   t();
-	   //textcolor(GREEN+BLINK);
+	  
 	   gotoxy(8,48);
 	   printf("Press Anykey to go to SUPPLIER MENU !!!");
-	   //textcolor(GREEN);
+	  
 	   lbox();
 	   gotoxy(30,8);
 	   printf(" SUPPLIER LIST ");
@@ -1283,22 +1194,22 @@ void search()
 	do
 	 {
 	   system("cls");
-	   //textcolor(WHITE);
+	  
 	   gotoxy(17,10);
 	   printf(" Two options Available for searching ");
 	   gotoxy(15,15);
 	   printf("Search by");
 	   gotoxy(25,15);
-	   //textcolor(RED+BLINK);
+	  
 	   printf("I");
-	   //textcolor(WHITE);
+	  
 	   gotoxy(26,15);
 	   printf("D number");
 
 	   gotoxy(15,18);
 	   printf("Search by");
 	   gotoxy(25,18);
-	   //textcolor(RED+BLINK);
+	 
 	   printf("N");
 	   //textcolor(WHITE);
 	   gotoxy(26,18);
@@ -1462,7 +1373,7 @@ void sup_update()
 	   printf(" Modifying Supplier ");
 	   gotoxy(12,13);
 	   printf("Enter supplier ID :  ");
-	  // //flushall();
+	
 	   scanf("%d",&sid);
 	   gotoxy(12,15);
 
